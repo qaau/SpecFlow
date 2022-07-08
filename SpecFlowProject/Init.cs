@@ -52,6 +52,8 @@ namespace SpecFlowProject
                 chromeOptions.AddArgument("--window-size=1920,1080");
                 chromeOptions.AddArgument("no-sandbox");
                 chromeOptions.AddArguments("--disable-extensions");
+                chromeOptions.AddArgument("--start-maximized");
+                chromeOptions.AddArgument("Zoom 70%");
                 _driver = new ChromeDriver(_driverPath, chromeOptions);
             }
             else if (ConfigurationManager.AppSettings.Get("browser") == "Firefox")

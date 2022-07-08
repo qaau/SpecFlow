@@ -26,6 +26,7 @@ namespace SpecFlowProject.Steps
         [When(@"I click '(.*)' button")]
         public void WhenIClickButton(string buttonName)
         {
+            _utils.ScrollToElement(_basePage.GetButtonByText(buttonName));
             _basePage.GetButtonByText(buttonName).Click();
         }
     }

@@ -1,9 +1,8 @@
 Feature: PracticeForm
-	Simple calculator for adding two numbers
 
-@mytag
-Scenario: Add two numbers
-	Given the first number is 50
-	And the second number is 70
-	When the two numbers are added
-	Then the result should be 120
+@smoke
+Scenario: Fill in Student Registration Form
+	Given I navigate to 'Practice Form' page
+	When I fill Practice form in with 'main' information
+	And I click 'Submit' button
+	Then I see 'main' Practice form output

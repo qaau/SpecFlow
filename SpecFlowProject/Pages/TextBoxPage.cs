@@ -11,13 +11,13 @@ namespace SpecFlowProject.Pages
         {
         }
         
-        public IWebElement fullName => _driver.FindElement(By.CssSelector("#userName-wrapper input"));
+        public IWebElement fullNameInput => _driver.FindElement(By.CssSelector("#userName-wrapper input"));
         
-        public IWebElement email => _driver.FindElement(By.CssSelector("#userEmail-wrapper input"));
+        public IWebElement emailInput => _driver.FindElement(By.CssSelector("#userEmail-wrapper input"));
        
-        public IWebElement currentAddress => _driver.FindElement(By.CssSelector("#currentAddress-wrapper textarea"));
+        public IWebElement currentAddressInput => _driver.FindElement(By.CssSelector("#currentAddress-wrapper textarea"));
        
-        public IWebElement permanentAddress => _driver.FindElement(By.CssSelector("#permanentAddress-wrapper textarea"));
+        public IWebElement permanentAddressInput => _driver.FindElement(By.CssSelector("#permanentAddress-wrapper textarea"));
         
         public IWebElement outputFullName => _driver.FindElement(By.CssSelector("#output #name"));
         
@@ -33,6 +33,8 @@ namespace SpecFlowProject.Pages
             {
                 case "valid": 
                     return TextBoxForm.CreateBuilder().Valid().Build();
+                case "invalidEmail": 
+                    return TextBoxForm.CreateBuilder().Valid().WithInvalidEmail().Build();
                 default:
                     throw new ArgumentOutOfRangeException(formName,"Unknown TextBoxForm!");
             }

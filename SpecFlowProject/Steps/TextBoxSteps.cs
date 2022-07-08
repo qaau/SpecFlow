@@ -21,14 +21,14 @@ namespace SpecFlowProject.Steps
             _textBoxPage = new TextBoxPage(driver, constants, utils);
         }
 
-        [When(@"I fill the form in with '(.*)' information")]
-        public void WhenIFillTheFormInWithInformation(string formType)
+        [When(@"I fill TextBox form in with '(.*)' information")]
+        public void WhenIFillTextBoxFormInWithInformation(string formType)
         {
             TextBoxForm form = _textBoxPage.GetTextBoxForm(formType);
-            _textBoxPage.fullName.SendKeys(form.FullName);
-            _textBoxPage.email.SendKeys(form.Email);
-            _textBoxPage.currentAddress.SendKeys(form.CurrentAddress);
-            _textBoxPage.permanentAddress.SendKeys(form.PermanentAddress);
+            _textBoxPage.fullNameInput.SendKeys(form.FullName);
+            _textBoxPage.emailInput.SendKeys(form.Email);
+            _textBoxPage.currentAddressInput.SendKeys(form.CurrentAddress);
+            _textBoxPage.permanentAddressInput.SendKeys(form.PermanentAddress);
         }
 
         [Then(@"I see '(.*)' Text Box form output")]
